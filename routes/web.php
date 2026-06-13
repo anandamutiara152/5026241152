@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
+use App\Http\Controllers\DVDDBController;
 
 Route::get('/', function () {
 
@@ -64,6 +65,15 @@ Route::get('/keranjang-belanja', [KeranjangBelanjaDBController::class, 'index'])
 Route::get('/keranjang-belanja/beli', [KeranjangBelanjaDBController::class, 'beli']);
 Route::post('/keranjang-belanja/store', [KeranjangBelanjaDBController::class, 'store']);
 Route::get('/keranjang-belanja/batal/{id}', [KeranjangBelanjaDBController::class, 'batal']);
+
+// Route CRUD DVD
+Route::get('/dvd', [DVDDBController::class, 'index']);
+Route::get('/dvd/tambah', [DVDDBController::class, 'tambah']);
+Route::post('/dvd/store', [DVDDBController::class, 'store']);
+Route::get('/dvd/edit/{id}', [DVDDBController::class, 'edit']);
+Route::post('/dvd/update', [DVDDBController::class, 'update']);
+Route::get('/dvd/hapus/{id}', [DVDDBController::class, 'hapus']);
+Route::get('/dvd/cari', [DVDDBController::class, 'cari']);
 
 Route::get('pert5index', function () {
 	return view('indexio');

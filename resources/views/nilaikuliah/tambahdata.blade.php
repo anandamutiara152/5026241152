@@ -17,7 +17,7 @@
             <div class="row mb-3">
                 <label for="NRP" class="col-sm-2 col-form-label">NRP</label>
                 <div class="col-sm-10">
-                    <input type="text" name="NRP" id="NRP" class="form-control">
+                    <input type="text" name="NRP" id="NRP" class="form-control" maxlength="6">
                 </div>
             </div>
 
