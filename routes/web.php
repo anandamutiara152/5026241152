@@ -9,6 +9,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
 use App\Http\Controllers\DVDDBController;
+use App\Http\Controllers\EASController;
 
 Route::get('/', function () {
 
@@ -74,6 +75,11 @@ Route::get('/dvd/edit/{id}', [DVDDBController::class, 'edit']);
 Route::post('/dvd/update', [DVDDBController::class, 'update']);
 Route::get('/dvd/hapus/{id}', [DVDDBController::class, 'hapus']);
 Route::get('/dvd/cari', [DVDDBController::class, 'cari']);
+
+//Route CRUD Tagihan Air
+Route::get('/eas', [EASController::class, 'index']) ->name('eas.index');
+Route::get('/eas/input', [EASController::class, 'create']) ->name('eas.create');
+Route::post('/eas/store', [EASController::class, 'store']) ->name('eas.store');
 
 Route::get('pert5index', function () {
 	return view('indexio');
